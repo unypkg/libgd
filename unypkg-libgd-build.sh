@@ -86,8 +86,7 @@ cmake \
     -DENABLE_TIFF=1 -DENABLE_GD_FORMATS=1 \
     -DBUILD_TEST=1 -B ./build
 
-#./configure \
-#    --prefix=/uny/pkg/"$pkgname"/"$pkgver"
+cd build || exit
 
 make -j"$(nproc)"
 
