@@ -79,12 +79,12 @@ unset LD_RUN_PATH
 
 webp_include_dir=(/uny/pkg/libwebp/*/include/webp)
 
-CMAKE_INCLUDE_PATH="$webp_include_dir" \
 cmake \
     -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver" \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INCLUDE_PATH="$webp_include_dir" \
     -DENABLE_PNG=1 -DENABLE_FREETYPE=1 -DENABLE_JPEG=1 -DENABLE_WEBP=1 \
-    -DENABLE_TIFF=1 -DENABLE_GD_FORMATS=1 \ 
-    -DCMAKE_INSTALL_DEFAULT_LIBDIR=lib \
+    -DENABLE_TIFF=1 -DENABLE_GD_FORMATS=1 \
     -DBUILD_TEST=1 -B ./build
 
 cd build || exit
