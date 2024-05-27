@@ -77,7 +77,11 @@ get_include_paths
 
 unset LD_RUN_PATH
 
-cmake -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver" \
+webp_include_dir=(/uny/pkg/libwebp/*/include/webp)
+
+CMAKE_INCLUDE_PATH="$webp_include_dir" \
+cmake \
+    -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver" \
     -DENABLE_PNG=1 -DENABLE_FREETYPE=1 -DENABLE_JPEG=1 -DENABLE_WEBP=1 \
     -DENABLE_TIFF=1 -DENABLE_GD_FORMATS=1 \
     -DBUILD_TEST=1 -B ./build
