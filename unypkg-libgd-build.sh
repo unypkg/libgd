@@ -83,7 +83,8 @@ CMAKE_INCLUDE_PATH="$webp_include_dir" \
 cmake \
     -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver" \
     -DENABLE_PNG=1 -DENABLE_FREETYPE=1 -DENABLE_JPEG=1 -DENABLE_WEBP=1 \
-    -DENABLE_TIFF=1 -DENABLE_GD_FORMATS=1 \
+    -DENABLE_TIFF=1 -DENABLE_GD_FORMATS=1 \ 
+    -DCMAKE_INSTALL_DEFAULT_LIBDIR=lib \
     -DBUILD_TEST=1 -B ./build
 
 cd build || exit
